@@ -1,0 +1,19 @@
+header > h1{
+    margin-left: 3rem;
+}
+
+header, footer{
+    background-color: rgb(203, 200, 200);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer > h2{
+    margin-left: 3rem;
+}

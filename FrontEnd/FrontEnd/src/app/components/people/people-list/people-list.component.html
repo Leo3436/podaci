@@ -1,0 +1,36 @@
+<div class="container my-5">
+
+  <div class="table-header">
+    <button type="button" class="btn btn-primary" (click)="addPeopleToDb()">Spremi</button>
+    <button type="button" class="btn btn-primary" (click)="readCsv()">Učitaj</button>
+    
+
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Poštanski broj</th>
+        <th>Grad</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="people && people.length > 0">
+      <tr [ngClass]="{'alert alert-danger': hasError(person)}" *ngFor="let person of people">
+        <td>{{ person.name }}</td>
+        <td>{{ person.surname }}</td>
+        <td >{{ person.zipCode }}</td>
+        <td>{{ person.city }}</td>
+        <td>{{ person.phoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p id="otherAlertParagraph" class="alert alert-info" *ngIf="people && people.length > 0">
+    Klikni na gumb "Spremi" kako bi spremio tablicu u bazu podataka.
+  </p>
+  <p id="alertParagraph" *ngIf="!people || people.length <= 0" class="alert alert-info">
+    Klikni na gumb "Učitaj" kako bi unesao podatke u tablicu.
+  </p>
+</div>
